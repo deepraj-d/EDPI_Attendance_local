@@ -8,14 +8,7 @@ path_video = "D:/cctv/full_day.mp4"
 file_name = os.path.splitext(os.path.basename(path_video))[0]
 CAM = "OUT"
 
-def calculate_chunksize(total_frames, num_processes):
-    """
-    Calculate an optimal chunksize for multiprocessing frame processing.
-    Formula: (total_frames / num_processes) / 100
-    Ensures at least 1 chunk size.
-    """
-    chunksize = max(1, int((total_frames / num_processes) / 100))
-    return chunksize
+
 
 
 cap = cv2.VideoCapture(path_video)
